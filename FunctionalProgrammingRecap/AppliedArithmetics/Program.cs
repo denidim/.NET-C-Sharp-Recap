@@ -21,6 +21,27 @@
             Func<int[], int[]> subtract = x => x.Select(x => x -= 1).ToArray();
 
             Action<int[]> print = x => Console.WriteLine(string.Join(" ", x));
+
+            while (action != "end")
+            {
+                if (action == "add")
+                {
+                    addNumber(numbers);
+                }
+                else if (action == "multiply")
+                {
+                    numbers = multiply(numbers);
+                }
+                else if (action == "subtract")
+                {
+                    numbers = subtract(numbers);
+                }
+                else if (action == "print")
+                {
+                    print(numbers);
+                }
+                action = Console.ReadLine()!;
+            }
         }
     }
 }
