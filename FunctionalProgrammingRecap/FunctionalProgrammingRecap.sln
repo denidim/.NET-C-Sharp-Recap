@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredicatesForNames", "Predi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListOfPredicates", "ListOfPredicates\ListOfPredicates.csproj", "{375301D5-379D-40CD-B7B0-D153559FEBF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredicateParty", "PredicateParty\PredicateParty.csproj", "{38C4A363-9956-484A-BB9B-1B54B6E560B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{375301D5-379D-40CD-B7B0-D153559FEBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{375301D5-379D-40CD-B7B0-D153559FEBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{375301D5-379D-40CD-B7B0-D153559FEBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C4A363-9956-484A-BB9B-1B54B6E560B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C4A363-9956-484A-BB9B-1B54B6E560B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C4A363-9956-484A-BB9B-1B54B6E560B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C4A363-9956-484A-BB9B-1B54B6E560B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
