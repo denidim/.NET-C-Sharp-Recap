@@ -8,8 +8,8 @@
 
             string command = Console.ReadLine()!;
 
-            Predicate<int> isEven = x => x % 2 == 0;
-            Predicate<int> isOdd = x => x % 2 != 0;
+            //Predicate<int> isEven = x => x % 2 == 0;
+            //Predicate<int> isOdd = x => x % 2 != 0;
 
             List<int> numbers = new List<int>();
 
@@ -18,16 +18,22 @@
                 numbers.Add(i);
             }
 
-            List<int> result;
+            Func<int, bool> isEven = x => x % 2 == 0;
 
-            if(command == "even")
-            {
-                result = numbers.FindAll(isEven);
-            }
-            else
-            {
-                result = numbers.FindAll(isOdd);
-            }
+            IEnumerable<int> result = command == "even" ?
+                numbers.Where(x => isEven(x) == true) :
+                numbers.Where(x => isEven(x) == false);
+
+            //List<int> result;
+
+            //if(command == "even")
+            //{
+            //    result = numbers.FindAll(isEven);
+            //}
+            //else
+            //{
+            //    result = numbers.FindAll(isOdd);
+            //}
 
             Console.WriteLine(string.Join(" ", result));
         }
