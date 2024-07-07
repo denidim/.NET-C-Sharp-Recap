@@ -21,6 +21,24 @@
             {
                 predicates.Add(x => x % divisor == 0);
             }
+
+            foreach (int number in numbersInRange)
+            {
+                bool isDivisible = true;
+
+                foreach (Predicate<int> predicate in predicates)
+                {
+                    if (!predicate(number))
+                    {
+                        isDivisible = false;
+                        break;
+                    }
+                }
+                if (isDivisible)
+                {
+                    Console.Write(number + " ");
+                }
+            }
         }
     }
 }
