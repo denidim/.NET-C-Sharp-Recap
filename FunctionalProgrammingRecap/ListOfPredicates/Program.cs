@@ -14,6 +14,13 @@
                 .Split()
                 .Select(int.Parse)
                 .ToArray();
+
+            List<Predicate<int>> predicates = new List<Predicate<int>>();
+
+            foreach (int divisor in divNumbers)
+            {
+                predicates.Add(x => x % divisor == 0);
+            }
         }
     }
 }
