@@ -43,12 +43,12 @@
         }
         private static Predicate<string> GetPredicate(string criteria, string value)
         {
-            if (criteria == "StartsWith")
+            if (criteria == "Starts with")
             {
                 return x => x.StartsWith(value);
 
             }
-            else if (criteria == "EndsWith")
+            else if (criteria == "Ends with")
             {
                 return x => x.EndsWith(value);
             }
