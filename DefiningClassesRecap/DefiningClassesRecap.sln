@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefineClassPerson", "DefineClassPerson\DefineClassPerson.csproj", "{423BB2C4-53B8-4624-9136-5EBB9893D0F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefineClassPerson", "DefineClassPerson\DefineClassPerson.csproj", "{423BB2C4-53B8-4624-9136-5EBB9893D0F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawData", "RawData\RawData.csproj", "{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "RawData\RawData.csproj", "{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniParking", "..\..\SoftUniParking\SoftUniParking.csproj", "{4D5F29F0-CE8C-4407-BB85-1532481C067A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
