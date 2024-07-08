@@ -7,7 +7,7 @@
             List<string> people = Console.ReadLine()!.Split().ToList();
 
             string input = Console.ReadLine()!;
-            
+
             while (input != "Party!")
             {
                 string[] tokens = input.Split(" ");
