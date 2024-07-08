@@ -1,6 +1,6 @@
 ﻿namespace DefineClassPerson
 {
-    internal class Program
+    internal class StartUp
     {
         static void Main(string[] args)
         {
