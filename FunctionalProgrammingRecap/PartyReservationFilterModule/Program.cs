@@ -8,35 +8,29 @@
 
             string input = Console.ReadLine()!;
 
-            while (input != "Party!")
+            Dictionary<string, Predicate<string>> predicatesByFilter = new Dictionary<string, Predicate<string>>();
+
+            while (input != "Print")
             {
-                string[] tokens = input.Split(" ");
+                string[] tokens = input.Split(';');
                 string command = tokens[0];
-                string criteria = tokens[1];
+                string filterType = tokens[1];
                 string value = tokens[2];
 
-                if (command == "Remove")
+                if (command == "Remove filter")
                 {
-                    people.RemoveAll(GetPredicate(criteria, value));
+                    predicatesByFilter.Remove(filterType + value);
                 }
-                else if (command == "Double")
+                else if (command == "Add filter")
                 {
-                    //people.AddRange(people.FindAll(GetPredicate(criteria,value)));
-
-                    var doubles = people.FindAll(GetPredicate(criteria, value));
-
-                    if (!doubles.Any())
-                    {
-                        input = Console.ReadLine()!;
-                        continue;
-                    }
-
-                    int index = people.FindIndex(GetPredicate(criteria, value));
-
-                    people.InsertRange(index, doubles);
+                    predicatesByFilter[filterType + value] = GetPredicate(filterType, value);
                 }
-
                 input = Console.ReadLine()!;
+            }
+            // apply predicates - only remove ppl
+            foreach (var kvp in predicatesByFilter)
+            {
+                people.RemoveAll(kvp.Value);
             }
 
             Print(people);
