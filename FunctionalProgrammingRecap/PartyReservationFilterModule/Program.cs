@@ -52,6 +52,10 @@
             {
                 return x => x.EndsWith(value);
             }
+            else if (criteria == "Contains")
+            {
+                return x => x.Contains(value);
+            }
             else
             {
                 return x => x.Length == int.Parse(value);
