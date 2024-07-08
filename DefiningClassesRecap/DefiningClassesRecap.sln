@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefineClassPerson", "DefineClassPerson\DefineClassPerson.csproj", "{423BB2C4-53B8-4624-9136-5EBB9893D0F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RawData", "RawData\RawData.csproj", "{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{423BB2C4-53B8-4624-9136-5EBB9893D0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{423BB2C4-53B8-4624-9136-5EBB9893D0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{423BB2C4-53B8-4624-9136-5EBB9893D0F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
