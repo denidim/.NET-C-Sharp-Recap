@@ -22,6 +22,7 @@
                 previousHed.Previous = Head;
                 Head.Next = previousHed;
             }
+        private bool CheckFirst(Node node)
         }
     }
 }
