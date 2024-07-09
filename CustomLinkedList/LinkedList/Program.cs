@@ -1,4 +1,6 @@
-﻿namespace LinkedList
+﻿using System;
+
+namespace LinkedList
 {
     internal class Program
     {
@@ -17,31 +19,34 @@
             linkedList.AddFirst(new Node(1));
             linkedList.AddFirst(new Node(2));
             linkedList.AddFirst(new Node(3));
-            linkedList.AddLast(new Node(11));
-            linkedList.AddLast(new Node(22));
-            linkedList.AddLast(new Node(33));
+            linkedList.AddFirst(new Node(4));
 
-            Console.WriteLine($"Removed first: {linkedList.RemoveFirst()}");
-            Console.WriteLine($"Removed first: {linkedList.RemoveFirst()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
-
-            Node node = linkedList.Head;
-
-            while (node != null)
+            linkedList.ForEach(n =>
             {
-                Console.WriteLine(node.Value);
-                node = node.Next;
-            }
+                Console.WriteLine(n.Value);
+            });
+
+            Console.WriteLine("Reversed");
+            linkedList.Reverse();
+
+            linkedList.ForEach(n =>
+            {
+                Console.WriteLine(n.Value);
+            });
+
+            Console.WriteLine("Reversed");
+            linkedList.Reverse();
+
+            linkedList.ForEach(n =>
+            {
+                Console.WriteLine(n.Value);
+            });
+
+            //foreach (var n in linkedList.ToArray())
+            //{
+            //    Console.WriteLine("In Foreach");
+            //    Console.WriteLine(n.Value);
+            //}
         }
     }
 }

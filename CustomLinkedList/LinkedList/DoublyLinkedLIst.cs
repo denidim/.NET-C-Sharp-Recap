@@ -4,29 +4,65 @@ namespace LinkedList
 {
     public class DoublyLinkedLIst
     {
+        private bool IsReversed = false;
         public Node Head { get; set; }
 
         public Node Tail { get; set; }
 
+        public int Count = 0;
+
+        public void Reverse()
+        {
+            IsReversed = !IsReversed;
+        }
+
         public void ForEach(Action<Node> action)
         {
             var node = Head;
+            if (IsReversed)
+            {
+                node = Tail;
+            }
             while (node != null)
             {
                 action(node);
+
+                if (IsReversed)
+                {
+                    node = node.Previous;
+                }
+                else
+                {
+                    node = node.Next;
+                }
+            }
+        }
+
+        public Node[] ToArray()
+        {
+            Node[] array = new Node[Count];
+            int i = 0;
+
+            var node = Head;
+
+            while (node != null)
+            {
+                array[i++] = node;
                 node = node.Next;
             }
+
+            return array.ToArray();
         }
 
         public Node RemoveLast()
         {
-            if(Tail == null)
+            if (Tail == null)
             {
                 return null;
             }
             var previous = Tail;
             var newTail = Tail.Previous;
-            if( newTail != null)
+            if (newTail != null)
             {
                 newTail.Next = null;
             }
@@ -47,7 +83,7 @@ namespace LinkedList
             }
             var previous = Head;
             var newHead = Head.Next;
-            if(newHead != null)
+            if (newHead != null)
             {
                 newHead.Previous = null;//next element becomes first and remove its previous
             }
@@ -62,7 +98,8 @@ namespace LinkedList
 
         public void AddFirst(Node node)
         {
-            if(!CheckFirst(node))
+            Count++;
+            if (!CheckFirst(node))
             {
                 Node previousHead = Head;
                 Head = node;
@@ -73,7 +110,8 @@ namespace LinkedList
 
         public void AddLast(Node node)
         {
-            if(!CheckFirst(node))
+            Count++;
+            if (!CheckFirst(node))
             {
                 Node previousTail = Tail;
                 Tail = node;
