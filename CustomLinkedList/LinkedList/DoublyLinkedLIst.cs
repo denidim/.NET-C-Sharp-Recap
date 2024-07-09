@@ -1,10 +1,22 @@
-﻿namespace LinkedList
+﻿using System;
+
+namespace LinkedList
 {
     public class DoublyLinkedLIst
     {
         public Node Head { get; set; }
 
         public Node Tail { get; set; }
+
+        public void ForEach(Action<Node> action)
+        {
+            var node = Head;
+            while (node != null)
+            {
+                action(node);
+                node = node.Next;
+            }
+        }
 
         public Node RemoveLast()
         {
@@ -58,6 +70,7 @@
                 Head.Next = previousHead;
             }
         }
+
         public void AddLast(Node node)
         {
             if(!CheckFirst(node))
@@ -68,6 +81,7 @@
                 Tail.Previous = previousTail;
             }
         }
+
         private bool CheckFirst(Node node)
         {
             if (Head == null)
