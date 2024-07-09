@@ -17,9 +17,23 @@
             linkedList.AddFirst(new Node(1));
             linkedList.AddFirst(new Node(2));
             linkedList.AddFirst(new Node(3));
-            linkedList.AddLast(new Node(1));
-            linkedList.AddLast(new Node(2));
-            linkedList.AddLast(new Node(3));
+            linkedList.AddLast(new Node(11));
+            linkedList.AddLast(new Node(22));
+            linkedList.AddLast(new Node(33));
+
+            Console.WriteLine($"Removed first: {linkedList.RemoveFirst()}");
+            Console.WriteLine($"Removed first: {linkedList.RemoveFirst()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
+            Console.WriteLine($"Removed last: {linkedList.RemoveLast()}");
 
             Node node = linkedList.Head;
 

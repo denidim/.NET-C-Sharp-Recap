@@ -8,11 +8,19 @@
 
         public Node RemoveLast()
         {
+            if(Tail == null)
+            {
+                return null;
+            }
             var previous = Tail;
             var newTail = Tail.Previous;
             if( newTail != null)
             {
                 newTail.Next = null;
+            }
+            else
+            {
+                Head = null;
             }
             Tail = newTail;
 
@@ -21,11 +29,19 @@
 
         public Node RemoveFirst()
         {
+            if (Head == null)
+            {
+                return null;
+            }
             var previous = Head;
             var newHead = Head.Next;
             if(newHead != null)
             {
                 newHead.Previous = null;//next element becomes first and remove its previous
+            }
+            else
+            {
+                Tail = null;
             }
             Head = newHead;
 
