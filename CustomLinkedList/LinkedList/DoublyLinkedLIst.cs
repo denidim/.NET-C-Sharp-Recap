@@ -60,6 +60,7 @@ namespace LinkedList
             {
                 return null;
             }
+            Count--;
             var previous = Tail;
             var newTail = Tail.Previous;
             if (newTail != null)
@@ -81,6 +82,7 @@ namespace LinkedList
             {
                 return null;
             }
+            Count--;
             var previous = Head;
             var newHead = Head.Next;
             if (newHead != null)
