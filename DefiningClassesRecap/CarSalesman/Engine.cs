@@ -11,7 +11,7 @@ namespace CarSalesman
         }
 
         public Engine(string model, int power, int? displacement)
-            :this (model,power)
+            : this(model, power)
         {
             Displacement = displacement;
         }
@@ -36,8 +36,12 @@ namespace CarSalesman
 
             sb.AppendLine($"  {Model}:");
             sb.AppendLine($"    Power: {Power}");
-            sb.AppendLine($"    Displacement: {Displacement}");
-            sb.AppendLine($"    Efficiency: {Efficiency}");
+
+            string disInfo = Displacement != null ? Displacement.ToString()! : "n/a";
+            sb.AppendLine($"    Displacement: {disInfo}");
+
+            string effInfo = Efficiency != null ? Efficiency : "n/a";
+            sb.AppendLine($"    Efficiency: {effInfo}");
 
             return sb.ToString().TrimEnd();
         }
