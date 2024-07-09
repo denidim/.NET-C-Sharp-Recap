@@ -2,12 +2,12 @@
 
 namespace LinkedList
 {
-    public class DoublyLinkedLIst
+    public class DoublyLinkedLIst<T>
     {
         private bool IsReversed = false;
-        public Node Head { get; set; }
+        public Node<T> Head { get; set; }
 
-        public Node Tail { get; set; }
+        public Node<T> Tail { get; set; }
 
         public int Count = 0;
 
@@ -16,7 +16,7 @@ namespace LinkedList
             IsReversed = !IsReversed;
         }
 
-        public void ForEach(Action<Node> action)
+        public void ForEach(Action<Node<T>> action)
         {
             var node = Head;
             if (IsReversed)
@@ -38,9 +38,9 @@ namespace LinkedList
             }
         }
 
-        public Node[] ToArray()
+        public Node<T>[] ToArray()
         {
-            Node[] array = new Node[Count];
+            Node<T>[] array = new Node<T>[Count];
             int i = 0;
 
             var node = Head;
@@ -54,7 +54,7 @@ namespace LinkedList
             return array.ToArray();
         }
 
-        public Node RemoveLast()
+        public Node<T> RemoveLast()
         {
             if (Tail == null)
             {
@@ -76,7 +76,7 @@ namespace LinkedList
             return previous;
         }
 
-        public Node RemoveFirst()
+        public Node<T> RemoveFirst()
         {
             if (Head == null)
             {
@@ -98,31 +98,31 @@ namespace LinkedList
             return previous;
         }
 
-        public void AddFirst(Node node)
+        public void AddFirst(Node<T> node)
         {
             Count++;
             if (!CheckFirst(node))
             {
-                Node previousHead = Head;
+                Node<T> previousHead = Head;
                 Head = node;
                 previousHead.Previous = Head;
                 Head.Next = previousHead;
             }
         }
 
-        public void AddLast(Node node)
+        public void AddLast(Node<T> node)
         {
             Count++;
             if (!CheckFirst(node))
             {
-                Node previousTail = Tail;
+                Node<T> previousTail = Tail;
                 Tail = node;
                 previousTail.Next = Tail;
                 Tail.Previous = previousTail;
             }
         }
 
-        private bool CheckFirst(Node node)
+        private bool CheckFirst(Node<T> node)
         {
             if (Head == null)
             {
