@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefineClassPerson", "Define
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RawData", "RawData\RawData.csproj", "{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniParking", "..\..\SoftUniParking\SoftUniParking.csproj", "{4D5F29F0-CE8C-4407-BB85-1532481C067A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniCarPark", "SoftUniCarPark\SoftUniCarPark.csproj", "{B7DC5696-1B80-43AF-8884-3D3F8E7EBE60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftUniCarPark", "SoftUniCarPark\SoftUniCarPark.csproj", "{B7DC5696-1B80-43AF-8884-3D3F8E7EBE60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE11A1C3-1E1F-4A96-A545-EC16CFD9231B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D5F29F0-CE8C-4407-BB85-1532481C067A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7DC5696-1B80-43AF-8884-3D3F8E7EBE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7DC5696-1B80-43AF-8884-3D3F8E7EBE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7DC5696-1B80-43AF-8884-3D3F8E7EBE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
