@@ -12,7 +12,7 @@
             {
                 string[] engineInfo = Console.ReadLine()!.Split();
 
-                string model =  engineInfo[0];
+                string model = engineInfo[0];
 
                 int power = int.Parse(engineInfo[1]);
 
@@ -20,10 +20,20 @@
 
                 if (engineInfo.Length == 3)
                 {
-                    engine.Displacement = int.Parse(engineInfo[2]);
+                    bool isDisplacement = int.TryParse(engineInfo[2], out var disp);
+
+                    if (isDisplacement)
+                    {
+                        engine.Displacement = disp;
+                    }
+                    else
+                    {
+                        engine.Efficiency = engineInfo[2];
+                    }
                 }
-                if(engineInfo.Length == 4)
+                if (engineInfo.Length == 4)
                 {
+                    engine.Displacement = int.Parse(engineInfo[2]);
                     engine.Efficiency = engineInfo[3];
                 }
                 engines.Add(engine);
@@ -41,20 +51,36 @@
 
                 string engineModel = carInfo[1];
 
-                Engine engine = engines.Where(x=>x.Model == engineModel).FirstOrDefault()!;
+                Engine engine = engines.FirstOrDefault(x => x.Model == engineModel)!;
 
                 Car car = new Car(model, engine);
 
-                if(carInfo.Length == 3)
+                if (carInfo.Length == 3)
                 {
-                    car.Weight = int.Parse(carInfo[2]);
+                    bool isWeight = int.TryParse(carInfo[2], out var weight);
+
+                    if (isWeight)
+                    {
+                        car.Weight = weight;
+                    }
+                    else
+                    {
+                        car.Color = carInfo[2];
+                    }
                 }
                 if (carInfo.Length == 4)
                 {
-                    car.Color = Console.ReadLine();
+                    car.Weight = int.Parse(carInfo[2]);
+                    car.Color = carInfo[3];
                 }
                 cars.Add(car);
             }
+
+            foreach (Car car in cars)
+            {
+                Console.WriteLine(car);
+            }
+            
         }
     }
 }
