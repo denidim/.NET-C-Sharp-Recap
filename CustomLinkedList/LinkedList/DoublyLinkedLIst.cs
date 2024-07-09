@@ -6,17 +6,30 @@
 
         public Node Tail { get; set; }
 
+        public Node RemoveLast()
+        {
+            var previous = Tail;
+            var newTail = Tail.Previous;
+            if( newTail != null)
+            {
+                newTail.Next = null;
+            }
+            Tail = newTail;
+
+            return previous;
+        }
+
         public Node RemoveFirst()
         {
-            var previousHead = Head;
-            var nextHead = Head.Next;
-            if(nextHead != null)
+            var previous = Head;
+            var newHead = Head.Next;
+            if(newHead != null)
             {
-                nextHead.Previous = null;//next element becomes first and remove its previous
+                newHead.Previous = null;//next element becomes first and remove its previous
             }
-            Head = nextHead;
+            Head = newHead;
 
-            return previousHead;
+            return previous;
         }
 
         public void AddFirst(Node node)

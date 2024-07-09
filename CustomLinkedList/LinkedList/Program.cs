@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LinkedList
+﻿namespace LinkedList
 {
     internal class Program
     {
@@ -20,6 +17,9 @@ namespace LinkedList
             linkedList.AddFirst(new Node(1));
             linkedList.AddFirst(new Node(2));
             linkedList.AddFirst(new Node(3));
+            linkedList.AddLast(new Node(1));
+            linkedList.AddLast(new Node(2));
+            linkedList.AddLast(new Node(3));
 
             Node node = linkedList.Head;
 
@@ -28,8 +28,6 @@ namespace LinkedList
                 Console.WriteLine(node.Value);
                 node = node.Next;
             }
-
-
         }
     }
 }
