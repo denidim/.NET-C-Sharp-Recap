@@ -20,10 +20,10 @@
         {
             if(!CheckFirst(node))
             {
-                Node previousHed = Head;
-                Head = node;
-                previousHed.Previous = Head;
-                Head.Next = previousHed;
+                Node previousTail = Tail;
+                Tail = node;
+                previousTail.Next = Tail;
+                Tail.Previous = previousTail;
             }
         }
         private bool CheckFirst(Node node)
