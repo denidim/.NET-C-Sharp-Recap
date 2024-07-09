@@ -8,21 +8,33 @@
 
         public void AddFirst(Node node)
         {
-            // Check first Node
-            if (Head == null)
+            if(!CheckFirst(node))
             {
+                Node previousHead = Head;
                 Head = node;
-                Tail = node;
-                return;
+                previousHead.Previous = Head;
+                Head.Next = previousHead;
             }
-            else 
+        }
+        public void AddLast(Node node)
+        {
+            if(!CheckFirst(node))
             {
                 Node previousHed = Head;
                 Head = node;
                 previousHed.Previous = Head;
                 Head.Next = previousHed;
             }
+        }
         private bool CheckFirst(Node node)
+        {
+            if (Head == null)
+            {
+                Head = node;
+                Tail = node;
+                return true;
+            }
+            return false;
         }
     }
 }
