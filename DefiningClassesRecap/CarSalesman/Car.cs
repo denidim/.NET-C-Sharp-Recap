@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace CarSalesman
 {
@@ -31,5 +27,17 @@ namespace CarSalesman
         public int? Weight { get; set; }
 
         public string? Color { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"{Model}:");
+            sb.AppendLine($"{Engine}:");
+            sb.AppendLine($" Weight: {Weight}:");
+            sb.AppendLine($" Color: {Color}:");
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }
