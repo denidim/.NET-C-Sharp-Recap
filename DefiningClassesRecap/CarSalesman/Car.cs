@@ -34,9 +34,12 @@ namespace CarSalesman
 
             sb.AppendLine($"{Model}:");
             sb.AppendLine($"{Engine}:");
-            sb.AppendLine($" Weight: {Weight}:");
-            sb.AppendLine($" Color: {Color}:");
 
+            string weightInfo = Weight != null ? Weight.ToString()! : "n/a";
+            sb.AppendLine($" Weight: {Weight}:");
+
+            string colorInfo = Color != null ? Color : "n/a";
+            sb.AppendLine($" Color: {Color}:");
             return sb.ToString().TrimEnd();
         }
     }
