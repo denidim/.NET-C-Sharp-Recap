@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace CarSalesman
 {
@@ -33,5 +29,17 @@ namespace CarSalesman
         public int? Displacement { get; set; }
 
         public string? Efficiency { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"  {Model}:");
+            sb.AppendLine($"    Power: {Power}");
+            sb.AppendLine($"    Displacement: {Displacement}");
+            sb.AppendLine($"    Efficiency: {Efficiency}");
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }
