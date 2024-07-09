@@ -6,6 +6,19 @@
 
         public Node Tail { get; set; }
 
+        public Node RemoveFirst()
+        {
+            var previousHead = Head;
+            var nextHead = Head.Next;
+            if(nextHead != null)
+            {
+                nextHead.Previous = null;//next element becomes first and remove its previous
+            }
+            Head = nextHead;
+
+            return previousHead;
+        }
+
         public void AddFirst(Node node)
         {
             if(!CheckFirst(node))
