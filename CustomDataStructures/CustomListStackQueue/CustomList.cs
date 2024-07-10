@@ -61,12 +61,7 @@
             }
             else
             {
-                for (int i = index; i < this._array.Length - 1; i++)
-                {
-                    this._array[i] = this._array[i + 1];
-                }
-                this._count--;
-                this._indexer--;
+                Shift(index);
             }
 
             if (this._array.Length / this._count == 2 && this._count > 1)
@@ -75,6 +70,16 @@
             }
 
             return removed;
+        }
+
+        private void Shift(int index)
+        {
+            for (int i = index; i < this._array.Length - 1; i++)
+            {
+                this._array[i] = this._array[i + 1];
+            }
+            this._count--;
+            this._indexer--;
         }
 
         private void Shrink()
