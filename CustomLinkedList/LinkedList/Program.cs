@@ -1,52 +1,67 @@
-﻿using System;
-
-namespace LinkedList
+﻿namespace LinkedList
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //LinkedList<int> list = new LinkedList<int>();
-            //LinkedListNode<int> node = list.First;
-            //while (node != null)
-            //{
-            //    Console.WriteLine(node.Value);
-            //    node = node.Next;
-            //}
+            Snake snake = new Snake();
 
-            var linkedList = new DoublyLinkedLIst();
-
-            linkedList.AddFirst(new Node(1));
-            linkedList.AddFirst(new Node(2));
-            linkedList.AddFirst(new Node(3));
-            linkedList.AddFirst(new Node(4));
-
-            linkedList.ForEach(n =>
+            snake.SnakeElements.AddFirst(new Node<SnakeElement>(new SnakeElement()
             {
-                Console.WriteLine(n.Value);
-            });
-
-            Console.WriteLine("Reversed");
-            linkedList.Reverse();
-
-            linkedList.ForEach(n =>
+                Character = '@',
+                Position = new Position(13, 16)
+            }));
+            snake.SnakeElements.AddFirst(new Node<SnakeElement>(new SnakeElement()
             {
-                Console.WriteLine(n.Value);
-            });
-
-            Console.WriteLine("Reversed");
-            linkedList.Reverse();
-
-            linkedList.ForEach(n =>
+                Character = '@',
+                Position = new Position(12, 16)
+            }));
+            snake.SnakeElements.AddFirst(new Node<SnakeElement>(new SnakeElement()
             {
-                Console.WriteLine(n.Value);
-            });
+                Character = '@',
+                Position = new Position(11, 16)
+            }));
 
-            //foreach (var n in linkedList.ToArray())
-            //{
-            //    Console.WriteLine("In Foreach");
-            //    Console.WriteLine(n.Value);
-            //}
+            Direction direction = Direction.Up;
+
+            while (true)
+            {
+                direction = ChangeDirection(direction);
+
+                Console.Clear();
+
+                Console.CursorVisible = false;
+
+                snake.DrawSnake();
+
+                snake.MoveSnake(direction);
+
+                Thread.Sleep(200);
+            }
+        }
+
+        private static Direction ChangeDirection(Direction direction)
+        {
+            if (Console.KeyAvailable)
+            {
+                var ch = Console.ReadKey(true).Key;
+                switch (ch)
+                {
+                    case ConsoleKey.LeftArrow:
+                        direction = Direction.Left;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        direction = Direction.Right;
+                        break;
+                    case ConsoleKey.UpArrow:
+                        direction = Direction.Up;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        direction = Direction.Down;
+                        break;
+                }
+            }
+            return direction;
         }
     }
 }
