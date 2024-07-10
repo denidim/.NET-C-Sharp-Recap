@@ -1,4 +1,7 @@
-﻿namespace CustomListStackQueue
+﻿using System;
+using System.Collections.Generic;
+
+namespace CustomListStackQueue
 {
     internal class Program
     {
@@ -7,6 +10,12 @@
             CustomList customList = new CustomList();
 
             customList.Add(5);
+            customList.Add(6);
+            customList.Add(7);
+            customList.Add(8);
+
+
+
             // must contain 5
 
             Console.WriteLine(customList.Count);
