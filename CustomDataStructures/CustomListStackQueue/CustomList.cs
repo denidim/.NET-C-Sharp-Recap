@@ -2,10 +2,14 @@
 {
     internal class CustomList
     {
-        /*void Add(int element) - Adds the given element to the end of the list
-          int RemoveAt(int index) - Removes the element at the given index
+        /*      void Add(int element) - Adds the given element to the end of the list
+                int RemoveAt(int index) - Removes the element at the given index
           bool Contains(int element) - Checks if the list contains the given element returns (True or False)
-          void Swap(int firstIndex, int secondIndex) - Swaps the elements at the given indexes*/
+          void Swap(int firstIndex, int secondIndex) - Swaps the elements at the given indexes
+                Resize – this method will be used to increase the internal collection's length twice
+                Shrink – this method will help us to decrease the internal collection's length twice
+                Shift – this method will help us to rearrange the internal collection's elements after removing one.*/
+
 
         private int[] _array = new int[2];
 
@@ -14,6 +18,18 @@
         private int _count = 0;
 
         public int Count => this._count;
+
+        public bool Contains(int element)
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                if(element == this._array[i])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public void Add(int element)
         {

@@ -15,11 +15,11 @@ namespace CustomListStackQueue
             customList.Add(7);
             customList.Add(8);
             Console.WriteLine(customList.RemoveAt(3));
-            Console.WriteLine(customList.RemoveAt(2));
-            Console.WriteLine(customList.RemoveAt(1));
-            Console.WriteLine(customList.RemoveAt(0));
 
-
+            Console.WriteLine(customList.Contains(5));
+            Console.WriteLine(customList.Contains(6));
+            Console.WriteLine(customList.Contains(7));
+            Console.WriteLine(customList.Contains(8));
 
             // must contain 5
 
