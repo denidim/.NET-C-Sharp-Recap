@@ -4,7 +4,7 @@
     {
         /*      void Add(int element) - Adds the given element to the end of the list
                 int RemoveAt(int index) - Removes the element at the given index
-          bool Contains(int element) - Checks if the list contains the given element returns (True or False)
+                bool Contains(int element) - Checks if the list contains the given element returns (True or False)
           void Swap(int firstIndex, int secondIndex) - Swaps the elements at the given indexes
                 Resize – this method will be used to increase the internal collection's length twice
                 Shrink – this method will help us to decrease the internal collection's length twice
@@ -18,6 +18,16 @@
         private int _count = 0;
 
         public int Count => this._count;
+
+        public void Swap(int firstIndex, int secondIndex)
+        {
+            if((firstIndex < 0 || secondIndex < 0) || (firstIndex > this._indexer || secondIndex > this._indexer))
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            (this._array[secondIndex], this._array[firstIndex]) = (this._array[firstIndex], this._array[secondIndex]);
+        }
 
         public bool Contains(int element)
         {

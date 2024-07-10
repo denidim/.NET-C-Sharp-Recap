@@ -21,6 +21,8 @@ namespace CustomListStackQueue
             Console.WriteLine(customList.Contains(7));
             Console.WriteLine(customList.Contains(8));
 
+            customList.Swap(2,1);
+
             // must contain 5
 
             Console.WriteLine(customList.Count);
