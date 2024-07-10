@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Security;
 
 namespace CustomListStackQueue
 {
@@ -13,6 +14,10 @@ namespace CustomListStackQueue
             customList.Add(6);
             customList.Add(7);
             customList.Add(8);
+            Console.WriteLine(customList.RemoveAt(3));
+            Console.WriteLine(customList.RemoveAt(2));
+            Console.WriteLine(customList.RemoveAt(1));
+            Console.WriteLine(customList.RemoveAt(0));
 
 
 

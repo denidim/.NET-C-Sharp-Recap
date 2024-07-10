@@ -9,7 +9,7 @@
 
         private int[] _array = new int[2];
 
-        private int _indexer = 0;
+        private int _indexer = -1;
 
         private int _count = 0;
 
@@ -21,9 +21,7 @@
             {
                 Resize();
             }
-
-            _array[_indexer] = element;
-            _indexer++;
+            _array[++_indexer] = element;
             _count++;
         }
 
@@ -39,24 +37,55 @@
             }
         }
 
-        //public int RemoveAt(int index)
-        //{
-        //    int removed;
-        //    if (this._count >= index)
-        //    {
-        //        throw new IndexOutOfRangeException();
-        //    }
-        //    else
-        //    {
-        //        removed = _array[_indexer];
+        public int RemoveAt(int index)
+        {
+            if (index >= this._count)
+            {
+                throw new IndexOutOfRangeException();
+            }
 
-        //        for (int i = _indexer; i < removed; i++)
-        //        {
-        //            int next = _array[i];
-        //        }
-        //    }
+            int removed = _array[index];
 
-        //    return 0;
-        //}
+            if (this._count <= 2)
+            {
+                this._array[0] = index == 0 ? this._array[1] : this._array[0];
+                this._count--;
+                this._indexer--;
+                return removed;
+            }
+
+            if (index == this._count-1)
+            {
+                this._indexer -= 1;
+                this._count -= 1;
+            }
+            else
+            {
+                for (int i = index; i < this._array.Length - 1; i++)
+                {
+                    this._array[i] = this._array[i + 1];
+                }
+                this._count--;
+                this._indexer--;
+            }
+
+            if (this._array.Length / this._count == 2 && this._count > 1)
+            {
+                Shrink();
+            }
+
+            return removed;
+        }
+
+        private void Shrink()
+        {
+            var old = this._array;
+            this._array = new int[this._array.Length / 2];
+
+            for (int i = 0; i < this._array.Length; i++)
+            {
+                this._array[i] = old[i];
+            }
+        }
     }
 }
