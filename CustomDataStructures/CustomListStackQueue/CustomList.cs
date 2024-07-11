@@ -21,10 +21,20 @@
         {
             get
             {
+                if (i < 0 || i >= this._count)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
                 return _array[i];
             }
             set
             {
+                if (i < 0 || i >= this._count)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
                 _array[i] = value;
             }
         }
