@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            CustomList();
+            
         }
 
         private static void CustomList()
