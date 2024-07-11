@@ -34,6 +34,14 @@
 
         public int Count => this._count;
 
+        public void ForEach(Action<int> action)
+        {
+            for (int i = 0; i < this._count; i++)
+            {
+                action(this._array[i]);
+            }
+        }
+
         public void Swap(int firstIndex, int secondIndex)
         {
             IsInRange(firstIndex);

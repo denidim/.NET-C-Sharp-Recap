@@ -44,6 +44,8 @@
             Console.WriteLine($"From indexer: {customList[0]}");//7
 
             Console.WriteLine($"From indexer: {customList[1]}");//5
+
+            customList.ForEach(x => Console.WriteLine($"From ForEach: {x}"));
         }
     }
 }
