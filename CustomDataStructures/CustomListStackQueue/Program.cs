@@ -1,41 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Security;
-
-namespace CustomListStackQueue
+﻿namespace CustomListStackQueue
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            CustomList();
+        }
+
+        private static void CustomList()
+        {
             CustomList customList = new CustomList();
 
-            customList.Add(1);
-            customList.Add(2);
-            customList.Add(3);
-            customList.Add(4);
-            customList.RemoveAt(3);
-            customList.Add(4);
+            customList.Add(5);
 
+            customList.Add(10);//5, 10
 
-            //customList.Add(10);//5, 10
-            //int removed = customList.RemoveAt(1);
-            //Console.WriteLine(removed); // 10
-            //// must contain 5
+            Console.WriteLine($"From indexer: {customList[0]}");//5
 
-            //Console.WriteLine(customList.Count);
-            //// 1
+            Console.WriteLine($"From indexer: {customList[1]}");//10
 
-            //customList.Add(7);//5,7
-            //bool contains = customList.Contains(5);
-            //Console.WriteLine(contains);
-            ////true
+            int removed = customList.RemoveAt(1);
 
-            //customList.Swap(0, 1);
-            ////7 5
+            Console.WriteLine($"Removed: {removed}"); // 10
 
-            //Console.WriteLine(customList[0]);//7
-            //Console.WriteLine(customList[1]);//5
+            bool contains = customList.Contains(5);
+            // must contain 5
+
+            Console.WriteLine($"Contains 5: {contains}");//true
+
+            Console.WriteLine($"Count: {customList.Count}");// 1
+
+            customList.Add(7);//5,7
+
+            bool contains7 = customList.Contains(7);
+            // must contain 7
+
+            Console.WriteLine($"Contains 7: {contains7}");//true
+
+            Console.WriteLine($"Count: {customList.Count}");// 2
+
+            customList.Swap(0, 1);//7 5
+
+            Console.WriteLine($"From indexer: {customList[0]}");//7
+
+            Console.WriteLine($"From indexer: {customList[1]}");//5
         }
     }
 }
