@@ -1,6 +1,6 @@
 ﻿namespace CustomListStackQueue
 {
-    internal class CustomStack
+    internal class CustomStack<T>
     {
         /*void Push(int element) – Adds the given element to the stack
          int Pop() – Removes the last added element
@@ -13,17 +13,17 @@
 
         private const int DefaultCapacity = 4;
 
-        private int[] items;
+        private T[] items;
 
         public CustomStack()
         {
             Count = 0;
-            items = new int[DefaultCapacity];
+            items = new T[DefaultCapacity];
         }
 
         public int Count { get; private set; }
 
-        public void ForEach(Action<int> action)
+        public void ForEach(Action<T> action)
         {
             for (int i = 0; i < Count; i++)
             {
@@ -31,14 +31,14 @@
             }
         }
 
-        public void Push(int item)
+        public void Push(T item)
         {
             Resize();
             items[Count] = item;
             Count++;
         }
 
-        public int Pop()
+        public T Pop()
         {
             if (Count < 1)
             {
@@ -47,7 +47,7 @@
             return items[--Count];
         }
 
-        public int Peek()
+        public T Peek()
         {
             if (Count < 1)
             {
@@ -63,7 +63,7 @@
                 return;
             }
 
-            int[] newArray = new int[Count * 2];
+            T[] newArray = new T[Count * 2];
 
             for (int i = 0; i < items.Length; i++)
             {

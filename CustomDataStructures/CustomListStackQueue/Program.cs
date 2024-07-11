@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            CustomStack customStack = new CustomStack();
+            CustomStack<int> customStack = new CustomStack<int>();
 
             customStack.Push(1);
             customStack.Push(2);
