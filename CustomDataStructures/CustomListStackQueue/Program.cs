@@ -4,10 +4,9 @@
     {
         static void Main(string[] args)
         {
-            
+
         }
 
-<<<<<<< list
         private static void CustomList()
         {
             CustomList customList = new CustomList();
@@ -47,7 +46,8 @@
             Console.WriteLine($"From indexer: {customList[1]}");//5
 
             customList.ForEach(x => Console.WriteLine($"From ForEach: {x}"));
-=======
+        }
+
         private static void CustomStack()
         {
             CustomStack<int> customStack = new CustomStack<int>();
@@ -69,7 +69,6 @@
             Console.WriteLine(customStack.Peek() == 3);
 
             customStack.ForEach(x => Console.WriteLine(x));
->>>>>>> main
         }
     }
 }
