@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            CustomStack();
+            
         }
 
         private static void CustomStack()
