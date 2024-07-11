@@ -84,23 +84,7 @@
 
             int removed = _array[index];
 
-            if (this._count <= 2)
-            {
-                this._array[0] = index == 0 ? this._array[1] : this._array[0];
-                this._count--;
-                this._indexer--;
-                return removed;
-            }
-
-            if (index == this._count - 1)
-            {
-                this._indexer -= 1;
-                this._count -= 1;
-            }
-            else
-            {
-                Shift(index);
-            }
+            Shift(index);
 
             if (this._array.Length / this._count == 2 && this._count > 1)
             {
@@ -112,7 +96,7 @@
 
         private void Shift(int index)
         {
-            for (int i = index; i < this._array.Length - 1; i++)
+            for (int i = index; i < this._count - 1; i++)
             {
                 this._array[i] = this._array[i + 1];
             }
