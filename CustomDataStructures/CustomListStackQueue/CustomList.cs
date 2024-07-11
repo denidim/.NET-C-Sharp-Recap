@@ -10,7 +10,6 @@
                 Shrink – this method will help us to decrease the internal collection's length twice
                 Shift – this method will help us to rearrange the internal collection's elements after removing one.*/
 
-
         private int[] _array = new int[2];
 
         private int _indexer = -1;
@@ -21,19 +20,13 @@
         {
             get
             {
-                if (i < 0 || i >= this._count)
-                {
-                    throw new IndexOutOfRangeException();
-                }
+                IsInRange(i);
 
                 return _array[i];
             }
             set
             {
-                if (i < 0 || i >= this._count)
-                {
-                    throw new IndexOutOfRangeException();
-                }
+                IsInRange(i);
 
                 _array[i] = value;
             }
@@ -73,18 +66,6 @@
             _count++;
         }
 
-        private void Resize()
-        {
-            var old = this._array;
-
-            this._array = new int[_array.Length * 2];
-
-            for (int i = 0; i < old.Length; i++)
-            {
-                this._array[i] = old[i];
-            }
-        }
-
         public int RemoveAt(int index)
         {
             if (index >= this._count)
@@ -102,6 +83,18 @@
             }
 
             return removed;
+        }
+
+        private void Resize()
+        {
+            var old = this._array;
+
+            this._array = new int[_array.Length * 2];
+
+            for (int i = 0; i < old.Length; i++)
+            {
+                this._array[i] = old[i];
+            }
         }
 
         private void Shift(int index)
@@ -122,6 +115,14 @@
             for (int i = 0; i < this._array.Length; i++)
             {
                 this._array[i] = old[i];
+            }
+        }
+
+        private void IsInRange(int i)
+        {
+            if (i < 0 || i >= this._count)
+            {
+                throw new IndexOutOfRangeException();
             }
         }
     }
