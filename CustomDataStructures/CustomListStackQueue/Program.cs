@@ -10,22 +10,13 @@ namespace CustomListStackQueue
         {
             CustomList customList = new CustomList();
 
-            customList.Add(5);
-            customList.Add(6);
-            customList.Add(7);
-            customList.Add(8);
-            Console.WriteLine(customList.RemoveAt(3));
+            customList.Add(1);
+            customList.Add(2);
+            customList.Add(3);
+            customList.Add(4);
+            customList.RemoveAt(3);
+            customList.Add(4);
 
-            Console.WriteLine(customList.Contains(5));
-            Console.WriteLine(customList.Contains(6));
-            Console.WriteLine(customList.Contains(7));
-            Console.WriteLine(customList.Contains(8));
-
-            customList.Swap(2,1);
-
-            // must contain 5
-
-            Console.WriteLine(customList.Count);
 
             //customList.Add(10);//5, 10
             //int removed = customList.RemoveAt(1);

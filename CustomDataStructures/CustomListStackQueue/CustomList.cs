@@ -36,10 +36,8 @@
 
         public void Swap(int firstIndex, int secondIndex)
         {
-            if ((firstIndex < 0 || secondIndex < 0) || (firstIndex > this._indexer || secondIndex > this._indexer))
-            {
-                throw new IndexOutOfRangeException();
-            }
+            IsInRange(firstIndex);
+            IsInRange(secondIndex);
 
             (this._array[secondIndex], this._array[firstIndex]) = (this._array[firstIndex], this._array[secondIndex]);
         }
@@ -68,10 +66,7 @@
 
         public int RemoveAt(int index)
         {
-            if (index >= this._count)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            IsInRange(index);
 
             int removed = _array[index];
 
@@ -99,12 +94,13 @@
 
         private void Shift(int index)
         {
-            for (int i = index; i < this._count - 1; i++)
+            this._count--;
+            this._indexer--;
+
+            for (int i = index; i < this._count; i++)
             {
                 this._array[i] = this._array[i + 1];
             }
-            this._count--;
-            this._indexer--;
         }
 
         private void Shrink()
