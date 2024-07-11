@@ -5,7 +5,7 @@
         /*      void Add(int element) - Adds the given element to the end of the list
                 int RemoveAt(int index) - Removes the element at the given index
                 bool Contains(int element) - Checks if the list contains the given element returns (True or False)
-          void Swap(int firstIndex, int secondIndex) - Swaps the elements at the given indexes
+                void Swap(int firstIndex, int secondIndex) - Swaps the elements at the given indexes
                 Resize – this method will be used to increase the internal collection's length twice
                 Shrink – this method will help us to decrease the internal collection's length twice
                 Shift – this method will help us to rearrange the internal collection's elements after removing one.*/
@@ -17,11 +17,23 @@
 
         private int _count = 0;
 
+        public int this[int i]
+        {
+            get
+            {
+                return _array[i];
+            }
+            set
+            {
+                _array[i] = value;
+            }
+        }
+
         public int Count => this._count;
 
         public void Swap(int firstIndex, int secondIndex)
         {
-            if((firstIndex < 0 || secondIndex < 0) || (firstIndex > this._indexer || secondIndex > this._indexer))
+            if ((firstIndex < 0 || secondIndex < 0) || (firstIndex > this._indexer || secondIndex > this._indexer))
             {
                 throw new IndexOutOfRangeException();
             }
@@ -33,7 +45,7 @@
         {
             for (int i = 0; i < this.Count; i++)
             {
-                if(element == this._array[i])
+                if (element == this._array[i])
                 {
                     return true;
                 }
@@ -80,7 +92,7 @@
                 return removed;
             }
 
-            if (index == this._count-1)
+            if (index == this._count - 1)
             {
                 this._indexer -= 1;
                 this._count -= 1;
