@@ -1,17 +1,33 @@
-﻿namespace GenericBoxOfString
+﻿using System.Text;
+
+namespace GenericBoxOfString
 {
     internal class Box<T>
     {
-        public T Value { get; set; }
+        public List<T> elements { get; set; }
 
-        public Box(T value)
+        public Box()
         {
-            Value = value;
+            elements = new List<T>();
+        }
+
+        public void Swap(int firstIndex, int secondIndex)
+        {
+            var curr = elements[firstIndex];
+            elements[firstIndex] = elements[secondIndex];
+            elements[secondIndex] = curr;
         }
 
         public override string ToString()
         {
-            return $"{this.Value.GetType()}: {this.Value}";
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < elements.Count; i++)
+            {
+                sb.AppendLine($"{elements[i].GetType()}: {elements[i]}");
+
+            }
+            return sb.ToString().TrimEnd();
         }
     }
 }
