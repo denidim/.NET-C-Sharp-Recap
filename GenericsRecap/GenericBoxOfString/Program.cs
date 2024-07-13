@@ -6,25 +6,20 @@
         {
             int n = int.Parse(Console.ReadLine());
 
-            //Test with string
-            //for (int i = 0; i < n; i++)
-            //{
-            //    string s = Console.ReadLine();
+            Box<string> box = new Box<string>();
 
-            //    Box<string> box = new Box<string>(s);
-
-            //    Console.WriteLine(box.ToString());
-            //}
-
-            //Test with int
             for (int i = 0; i < n; i++)
             {
-                int num = int.Parse(Console.ReadLine());
+                string s = Console.ReadLine();
 
-                Box<int> box = new Box<int>(num);
-
-                Console.WriteLine(box.ToString());
+                box.elements.Add(s);
             }
+
+            string[] arr = Console.ReadLine().Split();
+
+            box.Swap(int.Parse(arr[0]), int.Parse(arr[1]));
+
+            Console.WriteLine(box.ToString());
         }
     }
 }
