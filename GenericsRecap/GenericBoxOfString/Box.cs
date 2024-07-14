@@ -3,22 +3,26 @@
 namespace GenericBoxOfString
 {
     internal class Box<T>
+        where T : IComparable
     {
         public Box()
         {
-            elements = new List<T>();
+            Elements = new List<T>();
         }
+         
+        public List<T> Elements { get; set; }
 
-        public List<T> elements { get; set; }
+
+        public int CountOfElementsGreaterThan(T valueToCompare) => Elements.Count(x=>x.CompareTo(valueToCompare) > 0);
 
         public void Swap(int firstIndex, int secondIndex)
         {
-            var curr = elements[firstIndex];
-            elements[firstIndex] = elements[secondIndex];
-            elements[secondIndex] = curr;
+            var curr = Elements[firstIndex];
+            Elements[firstIndex] = Elements[secondIndex];
+            Elements[secondIndex] = curr;
         }
 
-        public override string ToString() => string.Join("\n\r", elements.Select(x=>$"{typeof(T)}: {x}"));
+        public override string ToString() => string.Join("\n\r", Elements.Select(x=>$"{typeof(T)}: {x}"));
         //{
         //    var sb = new StringBuilder();
 

@@ -10,14 +10,15 @@
 
             for (int i = 0; i < n; i++)
             {
-                box.elements.Add(int.Parse(Console.ReadLine()));
+                box.Elements.Add(int.Parse(Console.ReadLine()));
             }
 
-            string[] arr = Console.ReadLine().Split();
+            int valueToCompare = int.Parse(Console.ReadLine());
 
-            box.Swap(int.Parse(arr[0]), int.Parse(arr[1]));
+            int countOfElementsGreaterThan = box.CountOfElementsGreaterThan(valueToCompare);
 
-            Console.WriteLine(box.ToString());
+            Console.WriteLine(countOfElementsGreaterThan);
+
         }
     }
 }
