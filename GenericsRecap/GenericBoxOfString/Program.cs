@@ -4,21 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            string[] input = Console.ReadLine().Split();
 
-            Box<int> box = new Box<int>();
+            var personInfo = new MyTuple<string, string>($"{input[0]} {input[1]}", input[2]);
 
-            for (int i = 0; i < n; i++)
-            {
-                box.Elements.Add(int.Parse(Console.ReadLine()));
-            }
+            string[] nameBeer = Console.ReadLine().Split();
 
-            int valueToCompare = int.Parse(Console.ReadLine());
+            var beerInfo = new MyTuple<string, int>(nameBeer[0], int.Parse(nameBeer[1]));
 
-            int countOfElementsGreaterThan = box.CountOfElementsGreaterThan(valueToCompare);
+            string[] intAndDouble = Console.ReadLine().Split();
 
-            Console.WriteLine(countOfElementsGreaterThan);
+            var numbersInfo = new MyTuple<int, double>(int.Parse(intAndDouble[0]), double.Parse(intAndDouble[1]));
 
+            Console.WriteLine(personInfo);
+            Console.WriteLine(beerInfo);
+            Console.WriteLine(numbersInfo);
         }
     }
 }
