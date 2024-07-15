@@ -8,7 +8,7 @@ namespace Library
 
         public BooksLibrary(params Book[] books)
         {
-            this.books = new List<Book>(books);
+            this.books = new SortedSet<Book>(books);
         }
 
         public IEnumerator<Book> GetEnumerator()
