@@ -12,8 +12,15 @@
 
             BooksLibrary libraryTwo = new BooksLibrary(bookOne, bookTwo, bookThree);
 
-            foreach (Book item in libraryTwo)
+            //foreach (Book item in libraryTwo)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            var enumerator = libraryTwo.GetEnumerator();
+            while (enumerator.MoveNext())
             {
+                Book item = enumerator.Current;
                 Console.WriteLine(item);
             }
         }
