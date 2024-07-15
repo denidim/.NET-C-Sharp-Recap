@@ -10,7 +10,9 @@
 
             string[] nameBeer = Console.ReadLine().Split();
 
-            var beerInfo = new Threeuple<string, int, string>(nameBeer[0], int.Parse(nameBeer[1]), nameBeer[2]);
+            var drunkOrNot = nameBeer[2] == "drunk";
+
+            var beerInfo = new Threeuple<string, int, bool>(nameBeer[0], int.Parse(nameBeer[1]), drunkOrNot);
 
             string[] bankAcc = Console.ReadLine().Split();
 
