@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    internal class Book
+    internal class Book : IComparable<Book>
     {
         public Book(string title, int year, params string[] authors)
         {
@@ -9,21 +9,34 @@
             Authors = new List<string>(authors);
         }
 
-        public string Title { get; set; }
+        public string Title { get; private set; }
 
-        public int Year { get; set; }
+        public int Year { get; private set; }
 
-        public IEnumerable<string> Authors { get; set; }
+        public IReadOnlyCollection<string> Authors { get; private set; }
+
+        public int CompareTo(Book? other)
+        {
+            int result = this.Title.CompareTo(other.Title);
+
+
+            if (result == 0)
+            {
+                result = this.Year.CompareTo(other.Year);
+            }
+
+            return result;
+        }
 
         public override string ToString()
         {
             string authors = string.Empty;
 
-            if (this.Authors.Count() == 0) 
+            if (this.Authors.Count() == 0)
             {
                 authors = "Author: n/a";
             }
-            else if(this.Authors.Count() == 1)
+            else if (this.Authors.Count() == 1)
             {
                 authors = $"Author: {this.Authors.First()}";
             }
