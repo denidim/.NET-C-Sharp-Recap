@@ -13,7 +13,7 @@ namespace Library
 
         public IEnumerator<Book> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new LibraryIterator(books);
         }
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
