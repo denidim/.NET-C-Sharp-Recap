@@ -12,7 +12,12 @@ namespace CustomEnumeratorExample
 
         public IEnumerator<int> GetEnumerator()
         {
-            return new ReversePersonGradesCustomEnumerator(Grades);
+            for (int i = this.Grades.Length - 1; i >= 0; i--)
+            {
+                yield return Grades[i];
+            }
+
+            //return new ReversePersonGradesCustomEnumerator(Grades);
         }
 
         // Legacy
