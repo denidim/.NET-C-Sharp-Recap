@@ -1,6 +1,8 @@
-﻿namespace StackExercise
+﻿using System.Collections;
+
+namespace StackExercise
 {
-    internal class Stack<T>
+    internal class Stack<T> : IEnumerable<T>
     {
         private readonly List<T> elements;
 
@@ -30,5 +32,20 @@
 
             return element;
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = this.elements.Count-1; i >= 0; i--)
+            {
+                yield return this.elements[i];
+            }
+
+            for (int i = this.elements.Count - 1; i >= 0; i--)
+            {
+                yield return this.elements[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }
