@@ -26,6 +26,14 @@
                     {
                         Console.WriteLine(listyIterator.Move());
                     }
+                    else if(command == "PrintAll")
+                    {
+                        foreach (var item in listyIterator)
+                        {
+                            Console.Write($"{item} ");
+                        }
+                        Console.WriteLine();
+                    }
 
                     command = Console.ReadLine();
                 }
