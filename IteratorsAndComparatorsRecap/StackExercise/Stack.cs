@@ -16,5 +16,19 @@
                 this.elements.Add(item);
             }
         }
+
+        public T Pop()
+        {
+            if (this.elements.Count == 0)
+            {
+                throw new InvalidOperationException("No elements");
+            }
+
+            var element = this.elements[this.elements.Count - 1];
+
+            this.elements.RemoveAt(this.elements.Count - 1);
+
+            return element;
+        }
     }
 }
