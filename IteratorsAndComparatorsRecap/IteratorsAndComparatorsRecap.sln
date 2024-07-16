@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomEnumeratorExample", "CustomEnumeratorExample\CustomEnumeratorExample.csproj", "{58DFF1CB-4176-42DD-B8A3-C466C1F423D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListyIteratorExercise", "ListyIteratorExercise\ListyIteratorExercise.csproj", "{E16A08BE-3DB1-4020-9786-9E4D24B8FFDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{58DFF1CB-4176-42DD-B8A3-C466C1F423D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58DFF1CB-4176-42DD-B8A3-C466C1F423D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58DFF1CB-4176-42DD-B8A3-C466C1F423D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16A08BE-3DB1-4020-9786-9E4D24B8FFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16A08BE-3DB1-4020-9786-9E4D24B8FFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16A08BE-3DB1-4020-9786-9E4D24B8FFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16A08BE-3DB1-4020-9786-9E4D24B8FFDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
