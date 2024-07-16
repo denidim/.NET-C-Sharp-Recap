@@ -4,7 +4,29 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string[] input = Console.ReadLine().Split();
+
+            var listyIterator = new ListyIterator<string>(input.Skip(1).ToArray());
+
+            string command = Console.ReadLine();
+
+            while (command != "END")
+            {
+                if(command == "Print")
+                {
+                    listyIterator.Print();
+                }
+                else if (command == "HasNext")
+                {
+                    Console.WriteLine(listyIterator.HasNext());
+                }
+                else if (command == "Move")
+                {
+                    Console.WriteLine(listyIterator.Move());
+                }
+
+                command = Console.ReadLine();
+            }
         }
     }
 }
