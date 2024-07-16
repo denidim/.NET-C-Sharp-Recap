@@ -34,6 +34,11 @@
 
                 input = Console.ReadLine().Split();
             }
+
+            foreach (var item  in stack)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
