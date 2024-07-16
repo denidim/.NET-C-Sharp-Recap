@@ -1,4 +1,8 @@
-﻿namespace Froggy
+﻿using System.Collections;
+
+namespace Froggy
+{
+    internal class Lake : IEnumerable<int>
 {
     internal class Lake
         private readonly List<int> stones;
@@ -7,6 +11,15 @@
         {
             this.stones = stones.ToList();
         }
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
     {
+            throw new NotImplementedException();
+        }
     }
 }
