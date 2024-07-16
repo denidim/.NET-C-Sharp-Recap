@@ -1,6 +1,8 @@
-﻿namespace ListyIteratorExercise
+﻿using System.Collections;
+
+namespace ListyIteratorExercise
 {
-    internal class ListyIterator<T>
+    internal class ListyIterator<T> : IEnumerable<T>
     {
         private List<T> collection = new List<T>();
 
@@ -23,5 +25,15 @@
             }
             Console.WriteLine(collection[index]);
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach (var item in collection)
+            {
+                yield return item;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }
