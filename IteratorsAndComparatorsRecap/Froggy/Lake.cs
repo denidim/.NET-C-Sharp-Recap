@@ -3,8 +3,7 @@
 namespace Froggy
 {
     internal class Lake : IEnumerable<int>
-{
-    internal class Lake
+    {
         private readonly List<int> stones;
 
         public Lake(params int[] stones )
@@ -18,7 +17,7 @@ namespace Froggy
         }
 
         IEnumerator IEnumerable.GetEnumerator()
-    {
+        {
             throw new NotImplementedException();
         }
     }
