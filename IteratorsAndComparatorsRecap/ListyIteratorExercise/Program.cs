@@ -10,22 +10,29 @@
 
             string command = Console.ReadLine();
 
-            while (command != "END")
+            try
             {
-                if(command == "Print")
+                while (command != "END")
                 {
-                    listyIterator.Print();
-                }
-                else if (command == "HasNext")
-                {
-                    Console.WriteLine(listyIterator.HasNext());
-                }
-                else if (command == "Move")
-                {
-                    Console.WriteLine(listyIterator.Move());
-                }
+                    if (command == "Print")
+                    {
+                        listyIterator.Print();
+                    }
+                    else if (command == "HasNext")
+                    {
+                        Console.WriteLine(listyIterator.HasNext());
+                    }
+                    else if (command == "Move")
+                    {
+                        Console.WriteLine(listyIterator.Move());
+                    }
 
-                command = Console.ReadLine();
+                    command = Console.ReadLine();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
