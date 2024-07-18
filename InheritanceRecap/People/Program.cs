@@ -4,12 +4,21 @@
     {
         static void Main(string[] args)
         {
-            string name = Console.ReadLine();
-            int age = int.Parse(Console.ReadLine());
+            string name = "Pesho";//Console.ReadLine();
+            int age = 12;//int.Parse(Console.ReadLine());
 
-            Child child = new Child(name, age);
+            Person person;
 
-            Console.WriteLine(child);
+            if (age <= 15)
+            {
+                person = new Child(name, age);
+            }
+            else
+            {
+                person = new Person(name, age);
+            }
+
+            Console.WriteLine(person);
         }
     }
 }

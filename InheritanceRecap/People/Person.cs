@@ -4,15 +4,29 @@ namespace People
 {
     internal class Person
     {
+        private int age;
+
+        public string Name { get; set; }
+
         public Person(string name, int age)
         {
             Name = name;
             Age = age;
         }
 
-        public string Name { get; set; }
+        public virtual int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                ArgumentOutOfRangeException.ThrowIfNegative(value, "Age cannot be negative.");
 
-        public int Age { get; set; }
+                this.age = value;
+            }
+        }
 
         public override string ToString()
         {
