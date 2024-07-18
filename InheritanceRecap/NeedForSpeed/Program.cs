@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Vehicle vehicle = new RaceMotorcycle(100, 200);
+
+            vehicle.Drive(2);
         }
     }
 }
