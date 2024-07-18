@@ -12,6 +12,10 @@
             puppy.Eat();
             puppy.Weep();
             puppy.Bark();
+
+            Cat cat = new Cat();
+            cat.Mew();
+            cat.Eat();
         }
     }
 }
