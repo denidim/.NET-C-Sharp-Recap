@@ -10,5 +10,6 @@
             }
         }
 
+        public bool IsEmpty() => base.Count == 0;
     }
 }
