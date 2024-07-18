@@ -2,7 +2,7 @@
 
 namespace Animals
 {
-    public class Animal
+    public abstract class Animal
     {
         private int age;
 
@@ -34,9 +34,7 @@ namespace Animals
 
         public string Gender { get; set; }
 
-        public virtual void ProduceSound()
-        {
-        }
+        public abstract void ProduceSound();
 
         public override string ToString()
         {
