@@ -5,17 +5,19 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleInheritance", "SingleInheritance\SingleInheritance.csproj", "{817A7EC5-AA1C-4214-8BD6-599FA04FBB47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomList", "RandomList\RandomList.csproj", "{4BB2186C-D69B-4CBA-A018-9142F4306DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomList", "RandomList\RandomList.csproj", "{4BB2186C-D69B-4CBA-A018-9142F4306DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOfStrings", "StackOfStrings\StackOfStrings.csproj", "{5FA2EEB6-6B33-436F-BE12-447D36C8052B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackOfStrings", "StackOfStrings\StackOfStrings.csproj", "{5FA2EEB6-6B33-436F-BE12-447D36C8052B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "People", "People\People.csproj", "{B47ADD0C-DBF2-43FE-B3AD-3C6DBB1DF539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "People", "People\People.csproj", "{B47ADD0C-DBF2-43FE-B3AD-3C6DBB1DF539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo", "Zoo\Zoo.csproj", "{059DC6E3-0A3B-427C-8D38-E9445CE4FB81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoo", "Zoo\Zoo.csproj", "{059DC6E3-0A3B-427C-8D38-E9445CE4FB81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayersAndMonsters", "PlayersAndMonsters\PlayersAndMonsters.csproj", "{70097795-0DBF-44F3-B7B3-CA39964DD059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayersAndMonsters", "PlayersAndMonsters\PlayersAndMonsters.csproj", "{70097795-0DBF-44F3-B7B3-CA39964DD059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeedForSpeed", "NeedForSpeed\NeedForSpeed.csproj", "{53708DA3-EA63-47E1-8D37-4476769F7050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeedForSpeed", "NeedForSpeed\NeedForSpeed.csproj", "{53708DA3-EA63-47E1-8D37-4476769F7050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant", "Restaurant\Restaurant.csproj", "{E7364DD6-5CCE-4C1B-BBC7-D30BBC3C714F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{53708DA3-EA63-47E1-8D37-4476769F7050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53708DA3-EA63-47E1-8D37-4476769F7050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53708DA3-EA63-47E1-8D37-4476769F7050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7364DD6-5CCE-4C1B-BBC7-D30BBC3C714F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7364DD6-5CCE-4C1B-BBC7-D30BBC3C714F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7364DD6-5CCE-4C1B-BBC7-D30BBC3C714F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7364DD6-5CCE-4C1B-BBC7-D30BBC3C714F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
