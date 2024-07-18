@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var myStack = new MyStack();
+
+            Console.WriteLine(myStack.IsEmpty());
+
+            myStack.AddRange("cat", "dog", "camel");
+
+            Console.WriteLine(myStack.IsEmpty()); 
         }
     }
 }
