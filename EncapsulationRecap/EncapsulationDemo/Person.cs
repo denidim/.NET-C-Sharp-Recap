@@ -24,9 +24,9 @@
 
             set
             {
-                if(salary < 650)
+                if(value < 50)
                 {
-                    throw new ArgumentException("Salary cannot be less than 650 leva!");
+                    throw new ArgumentException("Salary cannot be less than 50 leva!");
                 }
                 salary = value;
             }

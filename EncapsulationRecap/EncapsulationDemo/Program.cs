@@ -16,16 +16,26 @@
 
                 persons.Add(person);
             }
-            var percentage = decimal.Parse(Console.ReadLine());
+            //var percentage = decimal.Parse(Console.ReadLine());
 
-            persons.ForEach(p => p.IncreaseSalary(percentage));
+            //persons.ForEach(p => p.IncreaseSalary(percentage));
 
-            persons.ForEach(p => Console.WriteLine(p.ToString()));
+            //persons.ForEach(p => Console.WriteLine(p.ToString()));
+
 
             //persons.OrderBy(p => p.FirstName)
             //.ThenBy(p => p.Age)
             //.ToList()
             //.ForEach(p => Console.WriteLine(p.ToString()));
+
+            Team team = new Team("SoftUni");
+
+            foreach (Person person in persons)
+            {
+                team.AddPlayer(person);
+            }
+
+            Console.WriteLine(team.ToString());
         }
     }
 }

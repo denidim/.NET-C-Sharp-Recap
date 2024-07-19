@@ -15,9 +15,9 @@
 
         public string Name { get => name; set => name = value; }
 
-         IReadOnlyCollection<Person> FirstTeam { get => firstTeam; }
+         IReadOnlyCollection<Person> FirstTeam { get => firstTeam.AsReadOnly(); }
 
-        public IReadOnlyCollection<Person> ReserveTeam { get => reserveTeam; }
+        public IReadOnlyCollection<Person> ReserveTeam { get => reserveTeam.AsReadOnly(); }
 
         public void AddPlayer(Person person)
         {
