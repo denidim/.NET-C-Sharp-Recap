@@ -36,5 +36,17 @@
                 width = value;
             }
         }
+
+        public double Height
+        {
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException($"{this.height.GetType().Name} cannot be zero or negative.");
+                }
+                height = value;
+            }
+        }
     }
 }
