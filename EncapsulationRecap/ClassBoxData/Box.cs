@@ -48,5 +48,10 @@
                 height = value;
             }
         }
+
+        public double GetSurfaceArea()
+        {
+            return 2 * (this.width * this.length) + 2 * (this.length * this.height) + 2 * (this.width * this.height);
+        }
     }
 }
