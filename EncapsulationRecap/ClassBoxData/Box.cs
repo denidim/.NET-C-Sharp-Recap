@@ -53,5 +53,15 @@
         {
             return 2 * (this.width * this.length) + 2 * (this.length * this.height) + 2 * (this.width * this.height);
         }
+
+        public double GetLateralSurfaceArea()
+        {
+            return  2 * (this.length * this.height) + 2 * (this.width * this.height);
+        }
+
+        public double GetVolume()
+        {
+            return this.length * this.width * this.height;
+        }
     }
 }
