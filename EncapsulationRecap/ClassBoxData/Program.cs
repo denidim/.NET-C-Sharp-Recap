@@ -8,11 +8,18 @@
             double width = double.Parse(Console.ReadLine());
             double height = double.Parse(Console.ReadLine());
 
-            Box box = new Box(length, width, height);
+            try
+            {
+                Box box = new Box(length, width, height);
 
-            Console.WriteLine($"Surface Area - {box.GetSurfaceArea():f2}");
-            Console.WriteLine($"Lateral Surface Area - {box.GetLateralSurfaceArea():f2}");
-            Console.WriteLine($"Volume - {box.GetVolume():f2}");
+                Console.WriteLine($"Surface Area - {box.GetSurfaceArea():f2}");
+                Console.WriteLine($"Lateral Surface Area - {box.GetLateralSurfaceArea():f2}");
+                Console.WriteLine($"Volume - {box.GetVolume():f2}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
