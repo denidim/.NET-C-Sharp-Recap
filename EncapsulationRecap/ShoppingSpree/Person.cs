@@ -5,12 +5,13 @@
 
         private string name;
         private decimal money;
-        private List<Product> bagOfProduct;
+        private IList<Product> bagOfProduct;
 
         public Person(string name, decimal money)
         {
             Name = name;
             Money = money;
+            this.bagOfProduct = new List<Product>();
         }
 
         public string Name
@@ -39,6 +40,6 @@
             }
         }
 
-        public List<Product> BagOfProduct { get => bagOfProduct; set => bagOfProduct = value; }
+        public IReadOnlyCollection<Product> BagOfProduct => bagOfProduct.AsReadOnly();
     }
 }
