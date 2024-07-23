@@ -22,7 +22,7 @@
         public string Type
         {
             get => type;
-            set
+            private set
             {
                 if (!toppingTypes.ContainsKey(value))
                 {
@@ -35,7 +35,7 @@
         public double Weight
         {
             get => weight;
-            set
+            private set
             {
                 if (value < 1 || value > 50)
                 {
