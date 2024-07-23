@@ -41,6 +41,16 @@
         }
 
         public IReadOnlyCollection<Product> BagOfProduct => bagOfProduct.AsReadOnly();
+
         public void Add(Product product) => this.bagOfProduct.Add(product);
+
+        public void DecreaseMoney(decimal price)
+        {
+            if(price > money)
+            {
+                throw new InvalidOperationException("Not enough money!");
+            }
+            this.money -= price;
+        } 
     }
 }
