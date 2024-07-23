@@ -41,5 +41,6 @@
         }
 
         public IReadOnlyCollection<Product> BagOfProduct => bagOfProduct.AsReadOnly();
+        public void Add(Product product) => this.bagOfProduct.Add(product);
     }
 }
