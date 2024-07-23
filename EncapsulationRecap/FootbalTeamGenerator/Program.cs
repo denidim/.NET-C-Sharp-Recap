@@ -1,12 +1,9 @@
-﻿using System.Numerics;
-
-namespace FootballTeamGenerator
+﻿namespace FootballTeamGenerator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
             string command = Console.ReadLine()!;
             List<Team> teams = new List<Team>();
 
@@ -24,7 +21,6 @@ namespace FootballTeamGenerator
                     {
                         Console.WriteLine(e.Message);
                     }
-
                 }
                 else if (cmdArgs[0] == "Add")
                 {
@@ -34,7 +30,6 @@ namespace FootballTeamGenerator
                     {
                         Console.WriteLine($"Team [{cmdArgs[1]}] does not exist.");
                     }
-
                     try
                     {
                         Player player = new Player(cmdArgs[2],
@@ -73,10 +68,11 @@ namespace FootballTeamGenerator
                     {
                         Console.WriteLine($"Team [{cmdArgs[1]}] does not exist.");
                     }
-
-                    Console.WriteLine($"{cmdArgs[1]} - {team.Stats}");
+                    else
+                    {
+                        Console.WriteLine($"{cmdArgs[1]} - {team.Stats}");
+                    }
                 }
-
                 command = Console.ReadLine()!;
             }
         }
