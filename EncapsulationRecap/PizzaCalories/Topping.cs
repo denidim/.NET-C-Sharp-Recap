@@ -4,10 +4,10 @@
     {
         private Dictionary<string, double> toppingTypes = new Dictionary<string, double>
         {
-            { "Meat", 1.2},
-            { "Veggies", 0.8},
-            { "Cheese", 1.1},
-            { "Sauce", 0.9}
+            { "meat", 1.2},
+            { "veggies", 0.8},
+            { "cheese", 1.1},
+            { "sauce", 0.9}
         };
 
         private string type;
@@ -24,7 +24,7 @@
             get => type;
             private set
             {
-                if (!toppingTypes.ContainsKey(value))
+                if (!toppingTypes.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException($"Cannot place {value} on top of your pizza.");
                 }
@@ -45,6 +45,6 @@
             }
         }
 
-        public double Calories => 2 * weight * toppingTypes[this.Type];
+        public double Calories => 2 * weight * toppingTypes[this.Type.ToLower()];
     }
 }

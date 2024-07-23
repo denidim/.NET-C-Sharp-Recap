@@ -7,15 +7,15 @@
 
         private Dictionary<string, double> flourTypeCalories = new Dictionary<string, double>
         {
-            {"White", 1.5 },
-            {"Wholegrain", 1.0 }
+            {"white", 1.5 },
+            {"wholegrain", 1.0 }
         };
 
         private Dictionary<string, double> bakingTechniqueCalories = new Dictionary<string, double>
         {
-            {"Crispy", 0.9 },
-            {"Chewy", 1.1 },
-            {"Homemade", 1.0 }
+            {"crispy", 0.9 },
+            {"chewy", 1.1 },
+            {"homemade", 1.0 }
 
         };
 
@@ -35,7 +35,7 @@
             get { return flourType; }
             private set
             {
-                if (!flourTypeCalories.ContainsKey(value))
+                if (!flourTypeCalories.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(DoughExceptionMessage);
                 }
@@ -48,7 +48,7 @@
             get { return bakingTechnique; }
             private set
             {
-                if (!bakingTechniqueCalories.ContainsKey(value))
+                if (!bakingTechniqueCalories.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(DoughExceptionMessage);
                 }
@@ -70,7 +70,7 @@
         }
 
         public double Calories
-            => 2 * this.Weight * this.flourTypeCalories[this.FlourType]
-                 * this.bakingTechniqueCalories[this.BakingTechnique];
+            => 2 * this.Weight * this.flourTypeCalories[this.FlourType.ToLower()]
+                 * this.bakingTechniqueCalories[this.BakingTechnique.ToLower()];
     }
 }
