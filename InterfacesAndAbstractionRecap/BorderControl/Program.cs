@@ -1,4 +1,6 @@
-﻿namespace BorderControl
+﻿using System.Globalization;
+
+namespace BorderControl
 {
     internal class Program
     {
@@ -7,39 +9,48 @@
             string command = Console.ReadLine()!.Trim();
 
             List<IDentifiable> identifiables = new List<IDentifiable>();
+            List<IBirthable> birthables = new List<IBirthable>();
 
             while (command != "End")
             {
                 string[] cmdArgs = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-                if (cmdArgs.Length == 2)
+                if (cmdArgs[0] == "Robot")
                 {
-                    string robotModel = cmdArgs[0];
-                    string robotId = cmdArgs[1];
+                    string robotModel = cmdArgs[1];
+                    string robotId = cmdArgs[2];
                     identifiables.Add(new Robot(robotModel, robotId));
 
                 }
+                else if (cmdArgs[0] == "Citizen")
+                {
+                    string citizenName = cmdArgs[1];
+                    int citizenAge = int.Parse(cmdArgs[2]);
+                    string citizenId = cmdArgs[3];
+                    DateTime birthDate = DateTime.ParseExact(cmdArgs[4], "dd/M/yyyy", CultureInfo.InvariantCulture);
+                    Citizen citizen = new Citizen(citizenName, citizenAge, citizenId, birthDate);
+                    identifiables.Add(citizen);
+                    birthables.Add(citizen);
+                }
                 else
                 {
-                    string citizenName = cmdArgs[0];
-                    int citizenAge = int.Parse(cmdArgs[1]);
-                    string citizenId = cmdArgs[2];
-                    identifiables.Add(new Citizen(citizenName, citizenAge, citizenId));
+                    string petName = cmdArgs[1];
+                    DateTime birthDate = DateTime.ParseExact(cmdArgs[2],"dd/M/yyyy",CultureInfo.InvariantCulture);
+                    Pet pet = new Pet(petName, birthDate);
+                    birthables.Add(pet);
                 }
 
                 command = Console.ReadLine()!.Trim();
             }
 
-            string lastDigitOfFakeIds = Console.ReadLine()!.Trim();
+            int yearOfBirth = int.Parse(Console.ReadLine()!.Trim());
 
-            foreach (var item in identifiables)
+            var bornInTheSameYear = birthables.FindAll(x => x.Birthdate.Year == yearOfBirth);
+
+            foreach (var item in bornInTheSameYear)
             {
-                if (item.CheckFakeId(lastDigitOfFakeIds))
-                {
-                    Console.WriteLine(item.Id);
-                }
+                Console.WriteLine(item.Birthdate.ToString("dd/M/yyyy"));
             }
-
         }
     }
 }
