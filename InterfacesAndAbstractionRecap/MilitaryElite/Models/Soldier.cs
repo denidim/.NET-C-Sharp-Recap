@@ -1,6 +1,8 @@
 ﻿namespace MilitaryElite.Models
 {
-    internal abstract class Soldier
+    using MilitaryElite.Interfaces;
+
+    internal abstract class Soldier : ISoldier
     {
         private int id;
         private string firstName;
@@ -8,9 +10,9 @@
 
         protected Soldier(int id, string firstName, string lastName)
         {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
+            this.Id = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
 
         public int Id { get => id; private set => id = value; }
