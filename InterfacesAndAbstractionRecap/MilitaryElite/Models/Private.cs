@@ -1,7 +1,7 @@
-﻿using MilitaryElite.Interfaces;
-
-namespace MilitaryElite.Models
+﻿namespace MilitaryElite.Models
 {
+    using Interfaces;
+
     internal class Private : Soldier, IPrivate
     {
         private decimal salary;

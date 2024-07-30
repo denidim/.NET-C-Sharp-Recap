@@ -1,6 +1,6 @@
 ﻿namespace MilitaryElite.Models
 {
-    using MilitaryElite.Interfaces;
+    using Interfaces;
 
     internal abstract class Soldier : ISoldier
     {
