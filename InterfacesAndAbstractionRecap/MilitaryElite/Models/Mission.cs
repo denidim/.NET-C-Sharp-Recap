@@ -9,10 +9,10 @@
 
         private string codeName;
 
-        public Mission(MissionStateEnum missionState, string codeName)
+        public Mission(string codeName, MissionStateEnum missionState)
         {
-            this.MissionState = missionState;
             this.CodeName = codeName;
+            this.MissionState = missionState;
         }
 
         public MissionStateEnum MissionState { get => missionState; private set => missionState = value; }
