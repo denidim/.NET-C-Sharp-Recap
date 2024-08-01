@@ -12,5 +12,12 @@
         }
 
         public decimal Salary { get => salary; private set => salary = value; }
+
+        public override string ToString()
+        {
+            decimal rounded = Math.Round(this.Salary, 2);
+
+            return $"{base.ToString() + "Salary: " + rounded:f2}";
+        }
     }
 }
