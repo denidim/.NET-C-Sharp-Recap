@@ -1,6 +1,7 @@
 ﻿namespace MilitaryElite.Models
 {
     using Interfaces;
+    using System.Text;
 
     internal abstract class Soldier : ISoldier
     {
@@ -20,5 +21,14 @@
         public string FirstName { get => firstName; private set => firstName = value; }
 
         public string LastName { get => lastName; private set => lastName = value; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append($"Name: {this.FirstName} {this.LastName} Id: {this.Id} ");
+
+            return sb.ToString();
+        }
     }
 }
