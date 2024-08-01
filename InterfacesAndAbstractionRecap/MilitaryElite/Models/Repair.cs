@@ -1,6 +1,7 @@
 ﻿namespace MilitaryElite.Models
 {
     using Interfaces;
+    using System.Text;
 
     internal class Repair : IRepair
     {
@@ -16,5 +17,10 @@
         public string PartName { get => partName; private set => partName = value; }
 
         public int HoursWorked { get => hoursWorked; private set => hoursWorked = value; }
+
+        public override string ToString()
+        {
+            return $"Part Name: {this.PartName} Hours Worked: {this.HoursWorked}";
+        }
     }
 }
