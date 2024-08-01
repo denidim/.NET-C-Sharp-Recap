@@ -2,7 +2,7 @@
 {
     internal enum MissionStateEnum
     {
-        InProgress = 1,
+        inProgress = 1,
         Finished = 2,
     }
 }
