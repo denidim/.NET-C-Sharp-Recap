@@ -2,7 +2,7 @@
 {
     internal enum SoldierCorpEnum
     {
-        Airforce = 1,
-        Marine = 2,
+        Airforces = 1,
+        Marines = 2,
     }
 }
