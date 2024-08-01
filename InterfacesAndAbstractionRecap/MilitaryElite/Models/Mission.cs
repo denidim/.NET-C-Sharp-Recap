@@ -23,5 +23,10 @@
         {
             this.missionState = MissionStateEnum.Finished;
         }
+
+        public override string ToString()
+        {
+            return $"Code Name: {this.CodeName} State {this.MissionState}";
+        }
     }
 }
