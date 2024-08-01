@@ -3,6 +3,7 @@
     using Enums;
     using Interfaces;
     using System.Collections.Generic;
+    using System.Text;
 
     internal class Commando : SpecialisedSoldier, ICommando
     {
@@ -15,5 +16,25 @@
         }
 
         public ICollection<IMission> Missions => missions.AsReadOnly();
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString());
+
+
+            if (this.Missions.Count != 0)
+            {
+                sb.AppendLine($"Missions:");
+                sb.Append($"  {string.Join($"{Environment.NewLine}  ", this.Missions)}");
+            }
+            else
+            {
+                sb.Append("Missions:");
+            }
+
+            return sb.ToString();
+        }
     }
 }
