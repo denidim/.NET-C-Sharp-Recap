@@ -15,9 +15,7 @@
 
         public override string ToString()
         {
-            decimal rounded = Math.Round(this.Salary, 2);
-
-            return $"{base.ToString() + "Salary: " + rounded:f2}";
+            return $"{base.ToString() + "Salary: " + string.Format("{0:0.00}", this.Salary)}";
         }
     }
 }
