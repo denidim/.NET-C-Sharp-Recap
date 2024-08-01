@@ -13,5 +13,10 @@
         }
 
         public int CodeNumber { get => codeNumber; private set => codeNumber = value; }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}Code Number {this.CodeNumber}";
+        }
     }
 }
