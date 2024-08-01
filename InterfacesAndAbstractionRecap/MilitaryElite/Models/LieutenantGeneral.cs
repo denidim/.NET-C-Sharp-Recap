@@ -2,6 +2,7 @@
 {
     using Interfaces;
     using System.Collections.Generic;
+    using System.Text;
 
     internal class LieutenantGeneral : Private, ILieutenantGeneral
     {
@@ -15,5 +16,18 @@
 
         public ICollection<IPrivate> Privates => this.privates.AsReadOnly();
 
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString());
+
+            sb.AppendLine("Privates:");
+
+            sb.Append($"  {string.Join($"{Environment.NewLine}  ", this.privates)}");
+
+            return sb.ToString();
+        }
     }
 }
