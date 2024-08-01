@@ -3,6 +3,7 @@
     using Interfaces;
     using Enums;
     using System.Collections.Generic;
+    using System.Text;
 
     internal class Engineer : SpecialisedSoldier, IEngineer
     {
@@ -15,5 +16,18 @@
         }
 
         public ICollection<IRepair> Repairs => repairs.AsReadOnly();
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString());
+
+            sb.AppendLine("Repairs:");
+
+            sb.Append($"  {string.Join($"{Environment.NewLine}  ", this.Repairs)}");
+
+            return sb.ToString();
+        }
     }
 }
