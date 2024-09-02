@@ -10,7 +10,7 @@
         }
         public double FuelQuantity { get; set; }
 
-        public double FuelConsumption { get; } // liters per km
+        public double FuelConsumption { get; }
 
         public abstract double IncreaseConsumption { get; }
 

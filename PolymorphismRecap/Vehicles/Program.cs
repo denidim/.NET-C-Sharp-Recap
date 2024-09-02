@@ -45,7 +45,7 @@
                 }
             }
             Console.WriteLine($"Car: {car.FuelQuantity:F2}");
-            Console.WriteLine($"Truck: {truck.FuelQuantity:F2}");
+            Console.WriteLine($"Truck: {Math.Round(truck.FuelQuantity, 2, MidpointRounding.AwayFromZero)}");
         }
     }
 }

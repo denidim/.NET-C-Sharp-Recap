@@ -30,7 +30,7 @@
 
         public override void Refuel(double amount)
         {
-            FuelQuantity += amount * 0.95; // FuelQuantity = (FuelQuantity + amount) * 0.95;
+            base.Refuel(amount * 0.95);
         }
     }
 }
